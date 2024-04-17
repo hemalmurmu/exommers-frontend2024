@@ -21,7 +21,7 @@ export const responseToast = (res:ResType,navigate:NavigateFunction | null,url:s
         toast.success(res.data.message);
         if(navigate){
             navigate(url);
-        }else{
+        }else if("error" in res){
             
             const error = res.error as FetchBaseQueryError;
             const messageResponse = error.data as messageResponse;
