@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore} from "@reduxjs/toolkit";
 import { productApi } from "../api/productApi";
 import { userApi } from "../api/userApi";
 import { userReducer } from "./userReducer";
@@ -18,5 +18,5 @@ export const store = configureStore({
         [dashBoardApi.reducerPath]:dashBoardApi.reducer,
         
     },
-    middleware:(mid)=>[...mid(),userApi.middleware,productApi.middleware,orderApi.middleware,dashBoardApi.middleware],
-})
+    middleware : (getDefaultMiddleware)=> getDefaultMiddleware().concat(userApi.middleware,productApi.middleware,orderApi.middleware,dashBoardApi.middleware)
+});
