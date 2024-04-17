@@ -11,7 +11,7 @@ type CartItemProps={
 }
 
 
-const CartItem = ({cartItem,incrementHandler,decrementHandler,removiHandler}:CartItemProps) => {
+const CartItemItem = ({cartItem,incrementHandler,decrementHandler,removiHandler}:CartItemProps) => {
 
   const {photo,productId,name,price,quantity} =cartItem;
   return (
@@ -39,4 +39,4 @@ const CartItem = ({cartItem,incrementHandler,decrementHandler,removiHandler}:Car
   )
 }
 
-export default CartItem
+export default CartItemItem
